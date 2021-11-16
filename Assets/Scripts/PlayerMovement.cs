@@ -14,11 +14,11 @@ public class PlayerMovement : MonoBehaviour
         playerRB.AddForce(0,0,forwardForce*Time.deltaTime);
         if(Input.GetKey("d"))
         {
-            playerRB.AddForce(sidewaysForce*Time.deltaTime,0,0);
+            playerRB.AddForce(sidewaysForce*Time.deltaTime,0,0,ForceMode.VelocityChange);
         }
         if(Input.GetKey("a"))
         {
-            playerRB.AddForce(-sidewaysForce*Time.deltaTime,0,0);
+            playerRB.AddForce(-sidewaysForce*Time.deltaTime,0,0,ForceMode.VelocityChange);
         }
     }
 }
