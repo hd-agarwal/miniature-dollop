@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody playerRB;
     public float forwardForce;
     public float sidewaysForce;
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -19,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey("a"))
         {
             playerRB.AddForce(-sidewaysForce*Time.deltaTime,0,0,ForceMode.VelocityChange);
+        }
+        if(playerRB.position.y<-1f){
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
 }
